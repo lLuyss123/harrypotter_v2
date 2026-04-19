@@ -129,6 +129,9 @@ main {
   border-bottom: solid 1px rgba(201, 168, 76, 0.55);
 }
 main #contenido-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: 3%;
   width: 60%;
   height: 100%;
@@ -137,7 +140,6 @@ main #contenido-principal {
 main #contenido-principal .img_main {
   background-color: black;
   position: relative;
-  justify-self: center;
   height: 43%;
   border-radius: 20px;
   overflow: hidden;
@@ -180,10 +182,9 @@ main #contenido-principal .img_main:hover::before {
 }
 main .footer_main {
   height: 50%;
-  width: 91%;
+  width: 80%;
   color: #c9a84c;
   padding: 10px;
-  padding-left: 10%;
 }
 main .footer_main span {
   font-size: 0.88rem;
