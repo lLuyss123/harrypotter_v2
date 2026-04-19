@@ -16,3 +16,17 @@ function mostrarPortada() {
 
 portadaVideo.addEventListener("click", reproducirVideo)
 video.addEventListener("ended", mostrarPortada)
+
+const git = document.getElementById("github")
+const linkedin = document.getElementById("linkedin")
+
+function linkgithub() {
+  window.open("https://github.com/lLuyss123", "_blank");
+}
+
+function linklinkedin() {
+  window.open ("https://www.linkedin.com/in/luis-mejia-1a46511a9/", "_blank");
+}
+
+git.addEventListener("click", linkgithub)
+linkedin.addEventListener("click", linklinkedin)

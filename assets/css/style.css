@@ -123,12 +123,13 @@ header nav ul li a {
 main {
   width: 100%;
   min-height: 100px;
-  max-height: 500px;
-  height: 500px;
+  max-height: 900px;
+  height: 900px;
   display: flex;
+  border-bottom: solid 1px rgba(201, 168, 76, 0.55);
 }
 main #contenido-principal {
-  padding-top: 50px;
+  padding-top: 3%;
   width: 60%;
   height: 100%;
   border-right: solid 1px rgba(201, 168, 76, 0.27);
@@ -137,7 +138,7 @@ main #contenido-principal .img_main {
   background-color: black;
   position: relative;
   justify-self: center;
-  height: 50%;
+  height: 43%;
   border-radius: 20px;
   overflow: hidden;
   border: solid 1px rgba(201, 168, 76, 0.55);
@@ -162,13 +163,13 @@ main #contenido-principal .img_main:hover {
 }
 main #contenido-principal .img_main::before {
   position: absolute;
-  top: 30%;
+  top: 40%;
   content: "";
   background-image: url(../imgs/play-button.png);
   background-repeat: no-repeat;
   background-size: contain;
   width: 100%;
-  height: 35%;
+  height: 20%;
   display: none;
   align-self: center;
   align-items: center;
@@ -177,9 +178,241 @@ main #contenido-principal .img_main::before {
 main #contenido-principal .img_main:hover::before {
   display: inline-block;
 }
-main aside {
+main .footer_main {
+  height: 50%;
+  width: 91%;
+  color: #c9a84c;
+  padding: 10px;
+  padding-left: 10%;
+}
+main .footer_main span {
+  font-size: 0.88rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  background-color: rgba(201, 168, 76, 0.27);
+  border: solid 1px rgba(201, 168, 76, 0.55);
+}
+main .footer_main h2 {
+  font-size: 2rem;
+}
+main .footer_main article {
+  margin-top: 8px;
+  color: #f5ecd7;
+}
+main .contenido_segundo {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  min-height: 100px;
+  max-height: 900px;
+  height: 900px;
+  padding: 3%;
+}
+main .contenido_segundo figure {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: minmax(0, 1fr) minmax(100px, 0.5fr);
+  min-height: 0;
+}
+main .contenido_segundo figure img {
+  width: 100%;
   height: 100%;
-  color: white;
+  border: solid 1px rgba(201, 168, 76, 0.55);
+  border-radius: 20px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+main .contenido_segundo figure img:hover {
+  opacity: 0.9;
+  transform: scale(1.01);
+  image-rendering: pixelated;
+}
+main .contenido_segundo figure .img_principal {
+  grid-column: 1/3;
+}
+main .contenido_segundo .separador {
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+main .contenido_segundo .separador::before {
+  display: flex;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: rgba(201, 168, 76, 0.27);
+}
+
+#casas {
+  flex: 1;
+  min-height: 100px;
+  max-height: 450px;
+  height: 450px;
+  padding-bottom: 4%;
+  background-color: #1a0a0a;
+  color: #c9a84c;
+  display: flex;
+  flex-direction: column;
+  gap: 7%;
+  align-items: center;
+  border-bottom: solid 1px rgba(201, 168, 76, 0.55);
+}
+#casas h2 {
+  padding-top: 1.5%;
+  font-size: 2rem;
+  font-weight: 400;
+}
+#casas .contenedor_casas {
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  gap: 15px;
+  min-height: 0;
+}
+#casas .contenedor_casas div {
+  position: relative;
+  font-weight: 700;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  text-align: center;
+  background-color: #0d0d1a;
+  border: solid 1px rgba(201, 168, 76, 0.55);
+  border-radius: 20px;
+}
+#casas .contenedor_casas div span {
+  display: block;
+}
+#casas .contenedor_casas div:hover span {
+  display: none;
+}
+#casas .contenedor_casas div:hover {
+  cursor: pointer;
+}
+#casas .contenedor_casas .gry::before {
+  display: none;
+  align-items: center;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url(../imgs/casa_Gryffindor.webp);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  background-position: center;
+}
+#casas .contenedor_casas .gry:hover::before {
+  display: block;
+}
+#casas .contenedor_casas .sly::before {
+  display: none;
+  align-items: center;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url(../imgs/casa_Slytherin.webp);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  background-position: center;
+}
+#casas .contenedor_casas .sly:hover::before {
+  display: block;
+}
+#casas .contenedor_casas .huff::before {
+  display: none;
+  align-items: center;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url(../imgs/casa_Hufflepuff.webp);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  background-position: center;
+}
+#casas .contenedor_casas .huff:hover::before {
+  display: block;
+}
+#casas .contenedor_casas .rave::before {
+  display: none;
+  align-items: center;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url(../imgs/casa_Ravenclaw.webp);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  background-position: center;
+}
+#casas .contenedor_casas .rave:hover::before {
+  display: block;
+}
+
+footer {
+  color: #b8a898;
+  background-color: #0a0508;
+}
+footer .contenedor_footer {
+  padding: 2%;
+  padding-bottom: 0;
+  width: 100%;
+  min-height: 100px;
+  max-height: 250px;
+  height: 250px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+footer .contenedor_footer section h2 {
+  color: #c9a84c;
+  font-size: 1.5rem;
+}
+footer .separador {
+  display: flex;
+  justify-content: center;
+}
+footer .separador::before {
+  display: flex;
+  content: "";
+  height: 1px;
+  width: 90%;
+  align-items: center;
+  background-color: rgba(201, 168, 76, 0.27);
+}
+footer .final_footer {
+  height: 80px;
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .final_footer p {
+  color: #6b5c50;
+}
+footer .final_footer figure {
+  display: flex;
+  gap: 20px;
+}
+footer .final_footer figure svg:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
