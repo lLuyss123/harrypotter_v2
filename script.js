@@ -1,5 +1,5 @@
 const portadaVideo = document.getElementById("portadaVideo")
-const portadaVideo2=document.getElementById("portadaVideo2")
+const portadaVideo2 = document.getElementById("portadaVideo2")
 const video = document.getElementById("miVideo")
 
 function reproducirVideo() {
@@ -25,8 +25,19 @@ function linkgithub() {
 }
 
 function linklinkedin() {
-  window.open ("https://www.linkedin.com/in/luis-mejia-1a46511a9/", "_blank");
+  window.open("https://www.linkedin.com/in/luis-mejia-1a46511a9/", "_blank");
 }
 
 git.addEventListener("click", linkgithub)
 linkedin.addEventListener("click", linklinkedin)
+
+
+/***********************nav responsivo ******************************/
+
+function mostrarMenu() {
+  const boton = document.getElementById("boton_menu");
+  const navegacion = document.getElementsByClassName("navegacion");
+  navegacion[0].classList.toggle("active")
+  boton.classList.toggle("active")
+
+}

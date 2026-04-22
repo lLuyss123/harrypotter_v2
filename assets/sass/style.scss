@@ -53,6 +53,7 @@ $border-strong: rgba($gold-base, 0.55); // borde visible
   list-style: none;
   text-decoration: none;
 }
+
 body {
   width: 100%;
   max-height: 100vh;
@@ -60,6 +61,7 @@ body {
   font-size: $text-base;
   background-color: $bg-primary;
 }
+
 header {
   height: 60px;
   padding: 10px;
@@ -71,12 +73,14 @@ header {
   width: 100%;
   background-color: $bg-secondary;
   border-bottom: solid 1px $border-strong;
+
   .contenedor_header {
     align-items: center;
     color: $text-primary;
     display: flex;
     gap: 10px;
   }
+
   .logo_img {
     background-color: $gold-base;
     height: 100%;
@@ -84,22 +88,99 @@ header {
     align-content: center;
     text-align: center;
     border-radius: 10px;
+
     img {
       width: 60%;
     }
   }
+
   nav {
     ul {
       display: flex;
       gap: 20px;
+
       li {
         a {
           color: $text-primary;
         }
       }
     }
+
+  }
+
+  @media (max-width:530px) {
+    nav {
+      z-index: 1;
+      opacity: 0;
+      padding: 10%;
+      background-color: black;
+      position: absolute;
+      top: 6.72%;
+      right: 0;
+      transition: opacity 1s ease-in-out;
+
+      &.active {
+        opacity: 1;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        li {
+          a {
+            color: $text-primary;
+          }
+        }
+      }
+    }
+
+    button {
+      display: block;
+
+
+      &.active {
+
+        polyline {
+          &:nth-child(1) {
+            transform: translate(0, 8px) rotate(45deg);
+
+          }
+
+          &:nth-child(2) {
+            opacity: 0;
+          }
+
+          &:nth-child(3) {
+            transform: translate(0, -11.8px) rotate(-45deg);
+          }
+        }
+      }
+    }
+
+
+  }
+
+  button {
+    padding: 3px;
+    background-color: $gold-dark;
+    border: none;
+    width: 10%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+
+    polyline {
+      transition: transform 0.5s ease-in-out;
+      background-color: white;
+      width: 100%;
+      height: 2px;
+    }
   }
 }
+
 #hero {
   position: relative;
   color: $text-primary;
@@ -108,6 +189,7 @@ header {
   max-height: 590px;
   height: 590px;
   border-bottom: solid 1px $border-strong;
+
   img {
     width: 100%;
     height: 100%;
@@ -122,11 +204,13 @@ header {
     position: absolute;
     bottom: 16%;
     left: 2%;
+
     h1 {
       font-size: $text-xl;
       color: $gold-base;
       text-shadow: 0 -1px 30px $gold-light;
     }
+
     .estrella {
       align-items: center;
       display: flex;
@@ -141,6 +225,7 @@ header {
         background-color: $gold-base;
         transition: width 0.5s ease-in-out;
       }
+
       &::after {
         margin: 10px;
         display: flex;
@@ -152,6 +237,7 @@ header {
       }
     }
   }
+
   &:hover .estrella::before {
     margin: 10px;
     display: flex;
@@ -160,6 +246,7 @@ header {
     width: 50px;
     background-color: $gold-base;
   }
+
   &:hover .estrella::after {
     margin: 10px;
     display: flex;
@@ -177,6 +264,7 @@ main {
   max-height: 900px;
   height: 900px;
   border-bottom: solid 1px $border-strong;
+
   #contenido-principal {
     display: flex;
     flex-direction: column;
@@ -185,6 +273,7 @@ main {
     width: 60%;
     height: 100%;
     border-right: solid 1px $border-gold;
+
     .img_main {
       background-color: black;
       position: relative;
@@ -193,12 +282,14 @@ main {
       overflow: hidden;
       border: solid 1px $border-strong;
       width: 80%;
+
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: top;
       }
+
       video {
         width: 100%;
         height: 100%;
@@ -226,6 +317,7 @@ main {
         align-items: center;
         background-position: center;
       }
+
       &:hover::before {
         display: inline-block;
       }
@@ -247,6 +339,7 @@ main {
       background-color: $border-gold;
       border: solid 1px $border-strong;
     }
+
     h2 {
       font-size: $text-1xl;
     }
@@ -266,12 +359,14 @@ main {
     max-height: 900px;
     height: 900px;
     padding: 3%;
+
     figure {
       display: grid;
       gap: 10px;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: minmax(0, 1fr) minmax(100px, 0.5fr);
       min-height: 0;
+
       img {
         width: 100%;
         height: 100%;
@@ -279,6 +374,7 @@ main {
         border-radius: 20px;
         object-fit: cover;
         transition: transform 0.3s ease;
+
         &:hover {
           opacity: 0.9;
           transform: scale(1.01);
@@ -290,10 +386,12 @@ main {
         grid-column: 1/3;
       }
     }
+
     // HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa
     .separador {
       margin-top: 3%;
       margin-bottom: 3%;
+
       &::before {
         display: flex;
         content: "";
@@ -324,6 +422,7 @@ main {
     font-size: $text-1xl;
     font-weight: $weight-regular;
   }
+
   .contenedor_casas {
     padding-left: 5%;
     padding-right: 5%;
@@ -354,10 +453,12 @@ main {
       &:hover span {
         display: none;
       }
+
       &:hover {
         cursor: pointer;
       }
     }
+
     .gry::before {
       display: none;
       align-items: center;
@@ -372,6 +473,7 @@ main {
       left: 0;
       background-position: center;
     }
+
     .gry:hover::before {
       display: block;
     }
@@ -390,6 +492,7 @@ main {
       left: 0;
       background-position: center;
     }
+
     .sly:hover::before {
       display: block;
     }
@@ -408,6 +511,7 @@ main {
       left: 0;
       background-position: center;
     }
+
     .huff:hover::before {
       display: block;
     }
@@ -426,6 +530,7 @@ main {
       left: 0;
       background-position: center;
     }
+
     .rave:hover::before {
       display: block;
     }
@@ -435,6 +540,7 @@ main {
 footer {
   color: $text-muted;
   background-color: $bg-tertiary;
+
   .contenedor_footer {
     padding: 2%;
     padding-bottom: 0;
@@ -445,6 +551,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
+
     section {
       h2 {
         color: $gold-base;
@@ -452,9 +559,11 @@ footer {
       }
     }
   }
+
   .separador {
     display: flex;
     justify-content: center;
+
     &::before {
       display: flex;
       content: "";
@@ -464,21 +573,25 @@ footer {
       background-color: $border-gold;
     }
   }
-  .final_footer{
+
+  .final_footer {
     height: 80px;
     padding-left: 5%;
     padding-right: 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    p{
+
+    p {
       color: $text-disabled;
     }
-    figure{
+
+    figure {
       display: flex;
       gap: 20px;
-      svg{
-        &:hover{
+
+      svg {
+        &:hover {
           cursor: pointer;
         }
       }
